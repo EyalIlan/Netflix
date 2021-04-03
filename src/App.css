@@ -41,3 +41,49 @@ body{
   outline: none;
   background-color: var(--primary-color);
 }
+
+.movieCard{
+  background-color: var(--secondary-color);
+  width: 350px;
+  height: 350px;
+  
+}
+
+.movieCard img{
+  height: 85%;
+  width: 100%;
+}
+
+.flex{
+  color: white;
+  display: flex;
+  height: 15%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap: 1.5rem;
+  margin: auto;
+}
+
+.movie-rating{
+  background-color: var(--primary-color);
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+.green{
+  background-color: green;
+}
+
+.orange{
+  background-color: orange;
+}
+
+.red{
+  background-color: red;
+}
