@@ -1,1 +1,43 @@
 
+:root {
+  --primary-color: #22254b;
+  --secondary-color: #373b69
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  background-color: var( --primary-color) ;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+.navbar{
+  display: flex;
+  padding: 1rem;
+  justify-content: flex-end;
+  background-color: var(--secondary-color);
+}
+
+
+
+.search{
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  border-radius: 50px;
+  font-family:inherit;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  color: #fff;
+}
+
+.search::placeholder {
+  color: #7378c5;
+}
+
+.search:focus{
+  outline: none;
+  background-color: var(--primary-color);
+}
