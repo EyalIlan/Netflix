@@ -13,11 +13,13 @@ export default function Movie({imageUrl,title,rating}) {
     if(rating <= 5){
         ratingcolor  = "red"
     }
-    else if(rating >5 && rating < 8){
+    if(rating >5 && rating < 8){
         ratingcolor = "orange"
-    }else{
-        ratingcolor = "green"
     }
+    if(rating >= 8){
+        ratingcolor = "green"
+    }    
+    
     SetShowRating(ratingcolor)
 
     },[])
