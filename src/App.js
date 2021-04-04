@@ -7,26 +7,33 @@ function App() {
   
 
 const [movies,SetMovies] = useState([])
-const [currentPage,SetCurrentPage] = useState (0)
-const [lockButton,SetLockButton] = useState(true)
-
+const [currentPage,SetCurrentPage] = useState (1)
+const [PrevlockButton,SetPrevLockButton] = useState(true)
+const [nextlockButton,SetNextLockButton] = useState(true)
 const [totalPages,SetTotalPages] = useState(0)
 
 
+const previousPage = () =>{
+  SetCurrentPage(currentPage - 1)
+}
+
+const nextPage = () =>{
+  SetCurrentPage(currentPage + 1)  
+}
+
 useEffect(() =>{
   const Request = async () =>{
-      let Data = await  Axios.get('&page=1') // nned to be dinamic
+      let Data = await  Axios.get(`&page=${currentPage}`) // nned to be dinamic
       SetMovies(Data.data.results)
       SetCurrentPage(Data.data.page)
       SetTotalPages(Data.total_pages)
-      if(currentPage === 0){
-        SetLockButton(true)
-      }else{
-        SetLockButton(false)
-    }
-  }
+   }
   Request()
-},[])
+
+   currentPage === 1? SetPrevLockButton(true): SetPrevLockButton(false)
+   currentPage === totalPages? SetNextLockButton(true) : SetNextLockButton(false)
+
+},[currentPage])
   
   console.log(movies)
 
@@ -42,8 +49,8 @@ useEffect(() =>{
       </div>
 
         <div>
-             <button disabled={lockButton}>{currentPage - 1}</button>
-             <button>{currentPage+1}</button>  
+             <button disabled={PrevlockButton} onClick={previousPage}>{currentPage - 1}</button>
+             <button disabled={nextlockButton} onClick={nextPage}>{currentPage+1}</button>  
           </div>
               
       </div>

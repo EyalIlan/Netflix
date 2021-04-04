@@ -10,7 +10,7 @@ export default function Movie({imageUrl,title,rating}) {
 
     let ratingcolor = ''   
 
-    if(rating < 5){
+    if(rating <= 5){
         ratingcolor  = "red"
     }
     else if(rating >5 && rating < 8){
