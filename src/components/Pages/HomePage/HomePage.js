@@ -9,12 +9,13 @@ import {Link} from 'react-router-dom'
 
 export default function HomePage() {
     
-
     const [movies,SetMovies] = useState([])
     const [currentPage,SetCurrentPage] = useState (1)
     const [PrevlockButton,SetPrevLockButton] = useState(true)
     const [nextlockButton,SetNextLockButton] = useState(true)
     const [totalPages,SetTotalPages] = useState(0)
+
+  
 
     const previousPage = () =>{
         SetCurrentPage(currentPage - 1)

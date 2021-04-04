@@ -71,8 +71,28 @@ h3{
 }
 
 .movieCard:hover{
-  box-shadow: 0 0 8px 8px  white
+  box-shadow: 0 0 4px 4px  white
  
+}
+
+.poster {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.poster img{
+  height: 90%;
+  width: 80%;
+}
+
+.movie-data{
+ 
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .flex{
@@ -87,11 +107,11 @@ h3{
 .grid{
   display: grid;
   grid-template-columns: repeat(4,1fr);
-  grid-gap: 1.5rem;
+  grid-gap: 1.0rem;
   margin: auto;
   width: 95vw;
-  
 }
+
 
 .btn{
   background-color: var(--secondary-color);
@@ -104,6 +124,12 @@ h3{
 .btn:hover{
   background-color:rgb(255, 247, 247);
   color:var(--primary-color);
+}
+
+.movie-container{
+  display: flex;
+  height: 90vh;
+  color: white;
 }
 
 .movie-rating{
@@ -124,3 +150,4 @@ h3{
 .red{
   background-color: red;
 }
+
