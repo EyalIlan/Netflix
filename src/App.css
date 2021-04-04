@@ -1,7 +1,7 @@
 
 :root {
   --primary-color: #22254b;
-  --secondary-color: #373b69
+  --secondary-color: #373b69;
 }
 
 *{
@@ -12,6 +12,14 @@ body{
   background-color: var( --primary-color) ;
   font-family: sans-serif;
   box-sizing: border-box;
+}
+
+h3{
+  font-size: 0.9rem;
+}
+
+.App{
+  margin: auto;
 }
 
 .navbar{
@@ -44,14 +52,16 @@ body{
 
 .movieCard{
   background-color: var(--secondary-color);
-  width: 350px;
   height: 350px;
-  
 }
 
 .movieCard img{
   height: 85%;
   width: 100%;
+}
+
+.movieCard:hover{
+  box-shadow: 8px 8px rgb(0, 0, 0);
 }
 
 .flex{
@@ -64,9 +74,11 @@ body{
 
 .grid{
   display: grid;
-  grid-template-columns: repeat(3,1fr);
-  grid-gap: 1.5rem;
+  grid-template-columns: repeat(4,1fr);
+  grid-gap: 1.0rem;
   margin: auto;
+  width: 95vw;
+  
 }
 
 .movie-rating{
