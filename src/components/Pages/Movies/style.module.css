@@ -1,0 +1,65 @@
+.movieCard{
+    cursor: pointer;
+    background-color: var(--secondary-color);
+    transition:  0.2s ease-in;
+    height: 370px;
+    animation-name: animatetop;
+    animation-duration: 1.0s
+  }
+  
+  .movieCard img{
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    max-height: 300px;
+    transition: 0.5s ease-in;
+    overflow: hidden;
+    
+  }
+  
+  .movieCard:hover{
+    transform: translateY(-20px);
+    box-shadow:  0 2px 2px 2px  black
+  }
+
+  .flex{
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px 10px;
+  }
+
+
+.movie_rating{
+    background-color: var(--primary-color);
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    font-weight: bold;
+    
+}
+
+.green{
+    background-color: green;
+}
+  
+  .orange{
+    background-color: orange;
+}
+  
+  .red{
+    background-color: red;
+}
+  
+
+@keyframes animatetop {
+    from {
+      transform: scale(0);
+      opacity: 0;
+    }
+    to {
+     transform: scale(100%);
+      opacity: 1;
+    }
+}
+  

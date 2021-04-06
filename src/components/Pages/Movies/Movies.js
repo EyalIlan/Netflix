@@ -1,14 +1,24 @@
 import React, { useState,useEffect } from 'react'
+import classes from './style.module.css';
+
 
 export default function Movie({imageUrl,title,rating}) {
     
     const  ImgStartUrl = 'https://image.tmdb.org/t/p/w500/'
     
     const [showRating,SetShowRating] = useState('')
-     
-    useEffect(() =>{
+    const [Rating,SetRating] = useState(rating)
+    const [movieCard,SetMovieCard] = useState([])
 
-    let ratingcolor = ''   
+    useEffect(() =>{
+      SetMovieCard([])  
+        RatingStatus()
+      SetMovieCard(classes.movieCard)  
+    },[Rating])
+
+    
+const RatingStatus = () =>{
+        let ratingcolor = ''   
 
     if(rating <= 5){
         ratingcolor  = "red"
@@ -21,22 +31,21 @@ export default function Movie({imageUrl,title,rating}) {
     }    
     
     SetShowRating(ratingcolor)
+}
 
-    },[])
-
-     
+    if(Rating !== rating){
+        SetRating(rating)
+    } 
 
     return (
    
-        <div className="movieCard">
-            <img src={`${ImgStartUrl+imageUrl}`} alt="movie"/>
-             
-          <div className ="flex">
+        <div className={movieCard}>
+            <img src={`${ImgStartUrl+imageUrl}`} alt="movie"/> 
+          <div className ={classes.flex}>
              <h3>{title}</h3>
-             <span className={"movie-rating " + showRating}>{rating}</span>
+              <p><span className={[classes.movie_rating,classes.showRating].join('')}>{rating}</span></p>
            </div>
         </div>
-   
-
+ 
     )
 }

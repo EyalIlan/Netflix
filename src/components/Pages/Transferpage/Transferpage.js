@@ -7,7 +7,7 @@ export default function Transferpage() {
     
     return (
         <div>
-            <HomePage url = {url}></HomePage>
+            <HomePage url = {url} type ="movie"></HomePage>
         </div>
     )
 }

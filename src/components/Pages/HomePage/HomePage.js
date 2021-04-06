@@ -1,14 +1,13 @@
 
 import React, { useState, useEffect } from 'react'
-import '../../../App.css';
 // import Axios from '../../utilitis/Axios'
 import Axios from 'axios'
-import Movie from '../Movies/Movies'
-import {Link} from 'react-router-dom'
+import Card from '../Movies/Movies'
+import {Link,NavLink} from 'react-router-dom'
 
 
 
-export default function HomePage({url,t}) {
+export default function HomePage({url,t,type}) {
     
     const [movies,SetMovies] = useState([])
     const [currentPage,SetCurrentPage] = useState (1)
@@ -30,6 +29,7 @@ export default function HomePage({url,t}) {
 
         const Request = async () =>{
             let Data = await  Axios.get(`${url}&page=${currentPage}`) // nned to be dinamic
+           
             SetMovies(Data.data.results)
             SetCurrentPage(Data.data.page)
             SetTotalPages(Data.total_pages)
@@ -45,6 +45,24 @@ export default function HomePage({url,t}) {
           SetCurrentPage(1)
         }
 
+        
+       
+
+        let DisplayContent;
+
+        if(type === "tv_show"){
+          DisplayContent = movies.map((p,index) =>{
+            return <NavLink  activeClassName="acitve" to={`/movie/${p.id}?type=tvShow`}><Card key={index} title={p.name} rating={p.vote_average} imageUrl={p.poster_path} ></Card></NavLink>
+           })
+        }
+        
+        if(type === "movie"){
+          DisplayContent =  movies.map((p,index) =>{
+            return <NavLink  activeClassName="acitve" to={`/movie/${p.id}?type=movie`}><Card key={index} title={p.title} rating={p.vote_average} imageUrl={p.poster_path} ></Card></NavLink>
+          })
+        }  
+
+
         return (
           <div className="App">
               
@@ -52,9 +70,7 @@ export default function HomePage({url,t}) {
             <div id="top"></div>
 
             <div className ="grid">
-               {movies.map((p,index) =>{
-                 return <Link to={`/movie/${p.id}`}><Movie key={index} title={p.title} rating={p.vote_average} imageUrl={p.poster_path} id={p.id}></Movie> </Link>
-               })}
+                  {DisplayContent}
             </div>
       
                <div className="lower-navbar">
