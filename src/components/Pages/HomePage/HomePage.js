@@ -28,7 +28,7 @@ export default function HomePage({url,t,type}) {
       useEffect(() =>{
 
         const Request = async () =>{
-            let Data = await  Axios.get(`${url}&page=${currentPage}`) // nned to be dinamic
+            let Data = await  Axios.get(`${url}&page=${currentPage}`) 
            
             SetMovies(Data.data.results)
             SetCurrentPage(Data.data.page)
@@ -72,7 +72,6 @@ export default function HomePage({url,t,type}) {
             <div className ="grid">
                   {DisplayContent}
             </div>
-      
                <div className="lower-navbar">
                     <a href="#top">  <button className="btn"  disabled={PrevlockButton} onClick={previousPage}>{currentPage - 1}</button> </a>
                     <a href="#top"> <button className="btn"  disabled={nextlockButton} onClick={nextPage}>{currentPage+1}</button> </a>
