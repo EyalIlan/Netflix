@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from 'react'
-import classes from './style.module.css';
+import  './style.css';
 
 
 export default function Movie({imageUrl,title,rating}) {
@@ -13,7 +13,7 @@ export default function Movie({imageUrl,title,rating}) {
     useEffect(() =>{
       SetMovieCard([])  
         RatingStatus()
-      SetMovieCard(classes.movieCard)  
+      SetMovieCard("movieCard")  
     },[Rating])
 
     
@@ -41,9 +41,9 @@ const RatingStatus = () =>{
    
         <div className={movieCard}>
             <img src={`${ImgStartUrl+imageUrl}`} alt="movie"/> 
-          <div className ={classes.flex}>
-             <h3>{title}</h3>
-              <p><span className={[classes.movie_rating,classes.showRating].join('')}>{rating}</span></p>
+          <div className ={"flex3"}>
+              <h3>{title}</h3>
+              <p><span className={`movie_rating ${showRating}`}>{rating}</span></p>
            </div>
         </div>
  

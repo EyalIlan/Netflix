@@ -7,17 +7,13 @@ export default function Movie({match}) {
     const [id,SetId] = useState(match.params.id)
     const [Data,SetData] = useState([])
     const [url,SetUrl] = useState('')
-    const [movies,SetMovies] = useState('')
+    // const [logos,SetLogos] = useState([])
 
     const parameters = new URLSearchParams(window.location.search)
     
-    const GetParams = () =>{
-       
-    }
-
+   
     const  ImgStartUrl = 'https://image.tmdb.org/t/p/w500/'
     useEffect(() =>{
-        GetParams()
         
         
         const Request = async () =>{
@@ -26,13 +22,14 @@ export default function Movie({match}) {
                 case 'tvShow':
                     GetTvShows()
                     break;
-                case 'movie':
-                    GetMovie()
-                    break;
-            }
-
-        }
-        Request()
+                    case 'movie':
+                        GetMovie()
+                        break;
+                    }
+                    
+                   
+                }
+                Request()
     },[])
     
 
@@ -54,19 +51,39 @@ export default function Movie({match}) {
     }
 
 
+    console.log(Data)
+    let display;
+    if(Data.production_companies){
+        display =  Data.production_companies.map(p =>{
+             return <img src={ImgStartUrl + p.logo_path} alt=""/>
+         })
+    }else{
+        display = "" 
+    }
 
     return (
+        <div className="main-container" style={{backgroundImage:`url(${ImgStartUrl}${Data.backdrop_path})`}}>
+
         <div className="movie-container">
             <div className="poster">
-                <img src={ImgStartUrl  + Data.backdrop_path} alt=""/>
+                <img src={ImgStartUrl  + Data.poster_path} alt=""/>
             </div>
             <div className="movie-data">
-                <h1>{Data.title}</h1>
+                <h1>{Data.name || Data.title}</h1>
               {url && <Youtube videoId={url.results[0].key}></Youtube> }
-                <h3>{Data.overview}</h3>
+                <h4>{Data.overview}</h4>
 
-                <h5><a href={Data.homepage}>HomePage</a></h5>
             </div>
+        </div>
+        <div className="lower-movie-content">
+                <h4><a href={Data.homepage}>HomePage</a></h4>
+                <h4>{Data.release_date}</h4>
+            </div>
+        <div className="logos flex_around">
+            {
+                display
+            }
+        </div>
         </div>
     )
 }

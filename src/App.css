@@ -16,7 +16,8 @@ body{
 }
 
 h3{
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
 }
 
 a{
@@ -74,6 +75,8 @@ a{
 .poster img{
   height: 90%;
   width: 80%;
+  border: 3px solid white;
+  box-shadow: 0 0 3px 3px black;
 }
 
 .movie-data{
@@ -86,11 +89,16 @@ a{
   
 }
 
-
+.movie-data h4 a{
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
 
 .grid{
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(5,1fr);
   grid-gap: 1.0rem;
   margin: auto;
   width: 95vw;
@@ -113,15 +121,47 @@ a{
 
 .movie-container{
   display: flex;
-  height: 90vh;
+  height: 91.8vh;
   color: white;
+  position: relative;
+  z-index: 1;
 }
 
+
+.main-container{
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  object-fit: contain;
+}
+
+.main-container .logos img{
+  width: 80px;
+}
 
 .flex{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.flex_around{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.lower-movie-content{
+  display: flex;
+  margin-top: 10px;
+  justify-content: center;
+  transform: translateX(100px);
+}
+
+.lower-movie-content h4,
+.lower-movie-content h4 a{
+  padding: 0 20px;
+  color: white;
+  font-size: 25px;
 }
 
 .Link{

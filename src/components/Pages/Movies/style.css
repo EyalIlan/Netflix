@@ -2,7 +2,7 @@
     cursor: pointer;
     background-color: var(--secondary-color);
     transition:  0.2s ease-in;
-    height: 370px;
+    height: 420px;
     animation-name: animatetop;
     animation-duration: 1.0s
   }
@@ -11,7 +11,7 @@
     background-position: center;
     background-repeat: no-repeat;
     width: 100%;
-    max-height: 300px;
+    max-height: 350px;
     transition: 0.5s ease-in;
     overflow: hidden;
     
@@ -22,7 +22,7 @@
     box-shadow:  0 2px 2px 2px  black
   }
 
-  .flex{
+  .flex3{
     color: white;
     display: flex;
     justify-content: space-around;
