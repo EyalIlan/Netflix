@@ -7,7 +7,7 @@ import {Link,NavLink} from 'react-router-dom'
 
 
 
-export default function HomePage({url,t,type}) {
+export default function HomePage({url,t,type,favorites,showFavorite}) {
     
     const [movies,SetMovies] = useState([])
     const [currentPage,SetCurrentPage] = useState (1)
@@ -28,11 +28,14 @@ export default function HomePage({url,t,type}) {
       useEffect(() =>{
 
         const Request = async () =>{
+          if(!showFavorite){
             let Data = await  Axios.get(`${url}&page=${currentPage}`) 
-           
             SetMovies(Data.data.results)
             SetCurrentPage(Data.data.page)
             SetTotalPages(Data.total_pages)
+          }else{
+            SetMovies(favorites)
+          }
          }
         Request()
          currentPage === 1? SetPrevLockButton(true): SetPrevLockButton(false)
@@ -72,10 +75,12 @@ export default function HomePage({url,t,type}) {
             <div className ="grid">
                   {DisplayContent}
             </div>
-               <div className="lower-navbar">
+               
+               {!showFavorite &&
+                  <div className="lower-navbar">
                     <a href="#top">  <button className="btn"  disabled={PrevlockButton} onClick={previousPage}>{currentPage - 1}</button> </a>
                     <a href="#top"> <button className="btn"  disabled={nextlockButton} onClick={nextPage}>{currentPage+1}</button> </a>
-                </div>
+                  </div>}
                     
             </div>
       

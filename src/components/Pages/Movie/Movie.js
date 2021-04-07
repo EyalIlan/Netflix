@@ -55,13 +55,22 @@ export default function Movie({match}) {
     const GetMovie = async () =>{
         SetShowData(false)
         let Data = await Axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=564ff4ab275baff4372adb3dc85ab368&language=en-US`) // get movie
-        console.log(Data)
         SetData(Data.data)
         let Url = await Axios.get(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=564ff4ab275baff4372adb3dc85ab368&language=en-US`) //get video
         SetUrl(Url.data)
         SetShowData(true) 
     }
 
+
+    //pasrse move out
+    // string move in
+    // remove item 
+
+    const addStoragh = () =>{
+      let arr = JSON.parse(localStorage.getItem('Array'))
+      arr.push(Data)
+      localStorage.setItem('Array',JSON.stringify(arr))
+    }
 
     
     let display;
@@ -89,6 +98,7 @@ export default function Movie({match}) {
         </div>
         <div className="lower-movie-content">
                 <h4><a href={Data.homepage}>HomePage</a></h4>
+                    <button onClick={addStoragh}>Add to my favorites</button>
                 <h4>{Data.release_date}</h4>
         </div>
         <div className="logos flex_around">
