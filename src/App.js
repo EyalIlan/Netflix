@@ -8,7 +8,6 @@ import Tv_show from './components/Pages/Tv_show/Tv_show'
 import Favorite from './components/Pages/Favorite/Favorite'
 function App() {
 
-  
 
   if(!localStorage.getItem('Array')){
       localStorage.setItem('Array',JSON.stringify([]))

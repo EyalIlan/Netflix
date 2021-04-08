@@ -92,13 +92,13 @@ export default function Movie({match}) {
             <div className="movie-data">
                 <h1>{Data.name || Data.title}</h1>
                 {url && <Youtube videoId={url.results[0].key}></Youtube> }
-                <h3>{Data.overview}</h3>
+                <h2>{Data.overview}</h2>
 
             </div>
         </div>
-        <div className="lower-movie-content">
+        <div className="lower-movie-content flex">
                 <h4><a href={Data.homepage}>HomePage</a></h4>
-                    <button onClick={addStoragh}>Add to my favorites</button>
+                    <button onClick={addStoragh} className="btn">Add to my favorites</button>
                 <h4>{Data.release_date}</h4>
         </div>
         <div className="logos flex_around">
