@@ -1,3 +1,18 @@
+
+# this is the movie app
+
+you can find here the most popular tv-shows and movies
+
+
+# instructions
+
+on the movie link you can search the most popular movies right now and on the tv-show 
+the most popular tv-shows
+
+you can add movies to your favorites by click on add to favorite on each movie page
+
+you can search by  term on the Searcgh bar the popular movies & abd tv-shows related by that name 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
