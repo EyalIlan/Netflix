@@ -14,17 +14,7 @@
 
 
 
-.movie-data{
- 
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    line-height: 1.3;
-    
-    
-  }
+
   
   .movie-data h1{
     font-size: 45px;
@@ -51,11 +41,24 @@
 }
 
 .poster img{
-    max-height: 70vh;
+    max-height: 75vh;
     border: 5px solid black;
     /* max-width: 700px; */
 }
 
-.movie-data {
-    width: 60%;
+
+
+.movie-data{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+   
+}
+
+.movie-data p{
+    margin: auto;
+    width: 80%;
+    font-size: 25px;
+    margin-bottom: 30px;
 }
