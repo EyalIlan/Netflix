@@ -18,7 +18,8 @@ export default function Movie({imageUrl,title,rating}) {
 
     
 const RatingStatus = () =>{
-        let ratingcolor = ''   
+    
+    let ratingcolor = ''   
 
     if(rating <= 5){
         ratingcolor  = "red"

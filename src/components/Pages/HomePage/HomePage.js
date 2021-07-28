@@ -67,7 +67,7 @@ export default function HomePage({url,t,type,favorites,showFavorite}) {
 
 
         return (
-          <div className="App">
+          <div className="App Backround-movie">
               
           
             <div id="top"></div>
