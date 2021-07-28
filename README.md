@@ -1,7 +1,7 @@
 
-# this is the movie app
+# Movie app
 
-you can find here the most popular tv-shows and movies
+You can find here the most popular tv-shows and movies
 
 
 # instructions
