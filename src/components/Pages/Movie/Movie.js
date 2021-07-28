@@ -66,9 +66,7 @@ export default function Movie({match}) {
       }
 
 
-    //pasrse move out
-    // string move in
-    // remove item 
+
 
     const addStoragh = () =>{
       let arr = JSON.parse(localStorage.getItem('Array'))
@@ -96,7 +94,7 @@ export default function Movie({match}) {
     }
     
     if(showData){
-        show = (<div className="main-container" style={{backgroundImage:`url(${ImgStartUrl}${Data.backdrop_path})`}}>
+        show = (<div className="main-container Backround-movie" >
         
         
         <div className="container">
@@ -132,3 +130,6 @@ export default function Movie({match}) {
         </div>
     )
 }
+
+
+// style={{backgroundImage:`url(${ImgStartUrl}${Data.backdrop_path})`}}

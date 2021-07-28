@@ -168,4 +168,22 @@ a{
   background-color: transparent;
 }
 
+ /* GENERAL CLASS */
 
+.Backround-movie{
+  position: relative;
+  z-index: 1;
+  background-color: black;
+}
+
+.Backround-movie::after{
+  content: '';
+  position: absolute;
+  background-image: url('https://www.teahub.io/photos/full/220-2205714_get-the-latest-movies-data-src-kodi-tv.jpg');
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -2;
+  opacity: 0.2;
+}
