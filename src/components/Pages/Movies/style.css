@@ -1,6 +1,7 @@
 .movieCard{
     cursor: pointer;
-    background-color: var(--secondary-color);
+    /* background-color: var(--secondary-color); */
+    background-color: rgb(0, 1, 32);
     transition:  0.2s ease-in;
     height: 420px;
     animation-name: animatetop;
