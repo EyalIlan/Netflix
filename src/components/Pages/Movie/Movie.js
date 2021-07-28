@@ -79,7 +79,7 @@ export default function Movie({match}) {
     
     let YoutubeObt = {
         height:'400',
-        width:'840',
+        width:'900',
         playerVars :{
             autoplay:1
         }
