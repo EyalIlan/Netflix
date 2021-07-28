@@ -6,7 +6,6 @@
 .container{
     padding: 1.5rem;
     text-align: center;
-    color: white;
 }
   .container h1{
       font-size: 40px;
@@ -22,10 +21,10 @@
 }
 
 .poster img{
-   max-height: 77vh;
+   max-height: 75vh;
     border: 5px solid black;
     /* max-width: 700px; */
-  box-shadow: 5px 10px black;
+  /* box-shadow: 5px 10px black; */
 }
 
 

@@ -15,7 +15,6 @@ export default function Movie({match}) {
 
     const parameters = new URLSearchParams(window.location.search)
     
-    console.log(parameters.get('type'))
     const  ImgStartUrl = 'https://image.tmdb.org/t/p/w500/'
     useEffect(() =>{
         
@@ -83,16 +82,23 @@ export default function Movie({match}) {
         }
     }
 
-    let display;
+    let displayLogos;
     let show
+
+    // GET LOGOS
     if(Data.production_companies){
-        display =  Data.production_companies.map(p =>{
-             return <img src={ImgStartUrl + p.logo_path} alt=""/>
+        displayLogos =  Data.production_companies.map(p =>{
+
+            console.log(p.logo_path);
+
+             return p.logo_path?<img src={ImgStartUrl + p.logo_path } alt=""/>: <h2>LOGO</h2>
          })
     }else{
-        display = "" 
+        displayLogos = "" 
     }
     
+    console.log(displayLogos)
+
     if(showData){
         show = (<div className="main-container Backround-movie" >
         
@@ -113,10 +119,10 @@ export default function Movie({match}) {
         <div className="lower-movie-content flex">
                 <h4><a href={Data.homepage}>HomePage</a></h4>
                     <button onClick={addStoragh} className="btn">Add to my favorites</button>
-                <h4>{Data.release_date}</h4>
+                <h4>{Data.release_date===undefined?'Date Unknown':Data.release_date}</h4>
         </div>
         <div className="logos flex_around">
-                        {display}
+                        {displayLogos}
         </div>
         </div>)
     }else{

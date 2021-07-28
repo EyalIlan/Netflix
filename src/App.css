@@ -12,7 +12,7 @@ body{
   background-color: var( --primary-color) ;
   font-family: sans-serif;
   box-sizing: border-box;
- 
+  color: white;
 }
 
 h3{
@@ -173,7 +173,7 @@ a{
 .Backround-movie{
   position: relative;
   z-index: 1;
-  background-color: black;
+  background-color: rgb(22, 22, 22);
 }
 
 .Backround-movie::after{
