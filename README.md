@@ -1,7 +1,7 @@
 
 # Movie app
 
-You can find here the most popular tv-shows and movies
+Movies app that shows information about all trending and popular movies and Tv-shows
 
 
 # instructions
