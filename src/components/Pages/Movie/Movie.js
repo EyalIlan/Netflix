@@ -60,6 +60,12 @@ export default function Movie({match}) {
     }
 
 
+    const _onReady =(event) => {
+        // access to player in all event handlers via event.target
+        event.target.pauseVideo();
+      }
+
+
     //pasrse move out
     // string move in
     // remove item 
@@ -71,6 +77,14 @@ export default function Movie({match}) {
     }
 
     
+    let YoutubeObt = {
+        height:'400',
+        width:'840',
+        playerVars :{
+            autoplay:1
+        }
+    }
+
     let display;
     let show
     if(Data.production_companies){
@@ -92,7 +106,7 @@ export default function Movie({match}) {
                 <img src={ImgStartUrl  + Data.poster_path} alt=""/>
             </div>
             <div className="movie-data">
-                {url && <Youtube videoId={url.results[0].key}></Youtube> }
+                {url && <Youtube videoId={url.results[0].key} opts={YoutubeObt} ></Youtube> }
                 <p>{Data.overview}</p>
         </div>
         </div>

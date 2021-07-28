@@ -36,12 +36,14 @@
 .movie-container{
     padding: 1rem;
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-around; */
+    max-height: 80vh;
+
     /* align-items: center; */
 }
 
 .poster img{
-    max-height: 75vh;
+   max-height: 77vh;
     border: 5px solid black;
     /* max-width: 700px; */
 }
@@ -52,13 +54,18 @@
     flex: 1;
     display: flex;
     flex-direction: column;
+    /* padding: 3rem; */
     justify-content: space-between;
    
 }
 
 .movie-data p{
-    margin: auto;
-    width: 80%;
-    font-size: 25px;
-    margin-bottom: 30px;
+    /* margin: auto; */
+    text-align: center;
+    /* width: 80%; */
+    padding: 0 50px;
+    font-size: 22px;
+    /* margin-top: 5px; */
+    margin-bottom: 15px;
+    line-height: 1.3;
 }
