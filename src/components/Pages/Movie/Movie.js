@@ -104,7 +104,7 @@ export default function Movie({match}) {
         
         
         <div className="container">
-                <h1>{Data.name || Data.title}</h1>
+                <h1 className="title">{Data.name || Data.title}</h1>
         <div className="movie-container">
             <div className="poster">
                 <img src={ImgStartUrl  + Data.poster_path} alt=""/>
@@ -127,11 +127,8 @@ export default function Movie({match}) {
         </div>)
     }else{
         show = ( 
-                  <Spinner>
-
-                  </Spinner>
-           
-                  )
+                  <Spinner></Spinner>
+                )
     }
 
     return (

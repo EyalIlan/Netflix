@@ -23,7 +23,6 @@ h3{
 }
 
 
-
 a{
   text-decoration: none;
   font-size: 18px;
@@ -176,11 +175,12 @@ a{
   padding: 1.5rem;
   text-align: center;
 }
-.container h1{
-    font-size: 40px;
+
+
+.title{
+  font-size: 40px;
+  padding: 10px;
 }
-
-
 
 
 .Backround-movie{
@@ -199,4 +199,11 @@ a{
   bottom: 0;
   z-index: -2;
   opacity: 0.2;
+}
+
+
+@media(max-width:600px)   {
+  .title{
+    font-size: 25px;
+  }
 }
