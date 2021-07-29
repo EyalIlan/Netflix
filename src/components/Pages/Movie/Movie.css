@@ -138,17 +138,30 @@
 @media(min-width:2000px){
     .movie-data p{
         margin: auto;
-        font-size: 40px;
+        font-size: 55px;
         padding: 0;
         max-width: 80%;
     }
     #VideoSize{
         width: 1550px;
-        height: 800px;
+        height: 900px;
     }
     .poster img{
         height: 80vh;
         border: solid 2px black;
 }
-
+.lower-movie-content h4,
+.lower-movie-content h4 a{
+  font-size: 62px;
+  padding: 0;
 }
+
+.btn{
+  background-color: var(--secondary-color);
+  color: white;
+  cursor: pointer;
+  padding: 40px;
+  margin: 0px;
+  font-size: 62px;
+}
+}  
