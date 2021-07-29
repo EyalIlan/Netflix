@@ -1,15 +1,12 @@
-.navbar_elements{
-    position: relative;
-  }
-  
-  .navbar_elements img{
-    position: absolute;
-    right: -40px;
-    bottom: 3px;
-  }
 
+.Link{
+    color: white;
+    font-size: 24px;
+}
+  
 
 .navbar{
+    
     display: flex;
     padding: 1rem;
     justify-content: space-around;
@@ -22,22 +19,26 @@
 
 
     .navbar_elements{
+        margin: auto;
         text-align: center;
-        display: block;
-        padding: 20px;
+        padding: 15px ;
+        width: 70%;
+        /* z-index: 22; */
       }
       
-      .navbar_elements img{
-        position: static;
-        
+      .navbar_elements:hover{
+          background-color:rgb(73, 73, 75) ;
       }
     
     
-    .navbar{
+.navbar{
         display: block;
         /* height: 30vh; */
         padding: 1rem;
         background-color: black
 }
-
+  .Link{
+    color: white;
+    font-size: 17px;
+  }
 }

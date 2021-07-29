@@ -1,3 +1,6 @@
+
+
+
 .movieCard{
     cursor: pointer;
     background-color: var(--secondary-color);
@@ -16,7 +19,6 @@
     /* min-height: 400px; */
     transition: 0.5s ease-in;
     overflow: hidden;
-    
   }
   
   .movieCard:hover{
@@ -24,12 +26,13 @@
     box-shadow:  0 2px 2px 2px  black
   }
 
-  .flex3{
+  .cards-container{
     color: white;
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 15px 25px;
+    font-weight: 700;
   }
 
  
@@ -66,3 +69,39 @@
     }
 }
   
+@media(max-width:700px){
+
+  .movieCard{
+    cursor: pointer;
+    background-color: var(--secondary-color);
+    /* background-color: black; */
+    transition:  0.2s ease-in;
+    /* height: 420px; */
+    animation-name: animatetop;
+    animation-duration: 1.0s;
+    padding: 5px;
+  }
+  
+
+  .cards-container{
+    text-align: center;
+    padding: 0;
+    display: block;
+  }
+
+  .cards-container p{
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .movieCard img{
+    background-position: center;
+    background-repeat: no-repeat;
+  
+    transition: 0.5s ease-in;
+    overflow: hidden;
+  }
+
+
+}

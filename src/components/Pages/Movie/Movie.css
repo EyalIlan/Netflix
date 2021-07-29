@@ -1,10 +1,4 @@
 
-.flex{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-}
 
 .btn{
     background-color: var(--secondary-color);

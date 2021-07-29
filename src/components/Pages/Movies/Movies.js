@@ -43,8 +43,8 @@ const RatingStatus = () =>{
    
         <div className={movieCard}>
             <img src={`${imageUrl!==null?ImgStartUrl+imageUrl:'/images/placeholder.jpg'}`} alt="movie"/> 
-          <div className ={"flex3"}>
-              <h3>{title}</h3>
+          <div className ={"cards-container"}>
+              <p>{title}</p>
               <p><span className={`movie_rating ${showRating}`}>{rating}</span></p>
            </div>
         </div>
