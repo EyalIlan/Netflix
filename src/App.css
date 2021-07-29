@@ -2,7 +2,7 @@
 :root {
   --primary-color: #22254b;
   /* --secondary-color: #373b69; */
-  --secondary-color: rgb(0, 1, 32);
+  --secondary-color: rgb(20, 18, 18);
 }
 
 *{
@@ -38,7 +38,7 @@ a{
   padding: 1rem;
   justify-content: space-around;
   align-items: center;
-  background-color: var(--secondary-color);
+  background-color: black
 }
 
 .lower-navbar{
