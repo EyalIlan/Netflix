@@ -75,8 +75,6 @@ export default function Movie({match}) {
 
     
     let YoutubeObt = {
-        height:'400',
-        width:'900',
         playerVars :{
             autoplay:1
         }
@@ -110,9 +108,9 @@ export default function Movie({match}) {
                 <img src={ImgStartUrl  + Data.poster_path} alt=""/>
             </div>
             <div className="movie-data">
-                {url && <Youtube videoId={url.results[0]?url.results[0].key:''} opts={YoutubeObt} ></Youtube> }
+                {url && <Youtube id="VideoSize" videoId={url.results[0]?url.results[0].key:''} opts={YoutubeObt} ></Youtube> }
                 <p>{Data.overview}</p>
-        </div>
+            </div>
         </div>
         
         </div>
