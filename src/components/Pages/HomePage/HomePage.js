@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 import Axios from 'axios'
 import Card from '../Movies/Movies'
 import {Link,NavLink} from 'react-router-dom'
-
+import SecondaryNavbar from '../../UI/SecondaryNavabr/secondNavbar'
 
 
 export default function HomePage({url,t,type,favorites,showFavorite}) {
@@ -68,7 +68,7 @@ export default function HomePage({url,t,type,favorites,showFavorite}) {
         return (
           <div className="App Backround-movie">
               
-          
+            <SecondaryNavbar></SecondaryNavbar>
             <div id="top"></div>
 
             <div className ="grid">

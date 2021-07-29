@@ -78,8 +78,8 @@ a{
   grid-template-columns: repeat(5,1fr);
   grid-gap: 1.0rem;
   margin: auto;
-  width: 95vw;
-  padding: 20px;
+  width: 85vw;
+  /* padding: 20px; */
 }
 
 
@@ -171,6 +171,17 @@ a{
 }
 
  /* GENERAL CLASS */
+
+ .container{
+  padding: 1.5rem;
+  text-align: center;
+}
+.container h1{
+    font-size: 40px;
+}
+
+
+
 
 .Backround-movie{
   position: relative;
