@@ -68,26 +68,29 @@
     width:900px;
 }
 
-@media(max-width:600px){
+@media(max-width:700px){
 
     .movie-container{
         display: block;
-        padding: 0;
+        padding: 0
     }
 
     .movie-data p{
+        margin: auto;
         font-size: 15px;
         padding: 0;
-        margin: 5px 0;
+        /* margin: 5px 0; */
+        max-width: 80%;
     }
 
     .movie-data{
         margin: 5px 0;
         display: block;
+        text-align: center;
     }
 
    .poster img{
-            height: 60vh;
+            height: 50vh;
             border: solid 2px black;
    }
    #VideoSize{
@@ -118,3 +121,22 @@
 
 }
 
+@media(max-width:1200px ) and (min-width:700px){
+
+    .movie-container{
+        padding: 0;
+        display: block;
+    }
+
+    #VideoSize{
+        width: 550px;
+        height: 400px;
+    }
+    .movie-data p{
+        margin: auto;
+        font-size: 18px;
+        padding: 0;
+        max-width: 80%;
+    }
+
+}

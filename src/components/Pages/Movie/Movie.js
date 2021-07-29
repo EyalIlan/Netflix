@@ -109,7 +109,8 @@ export default function Movie({match}) {
             </div>
             <div className="movie-data">
                 {url && <Youtube id="VideoSize" videoId={url.results[0]?url.results[0].key:''} opts={YoutubeObt} ></Youtube> }
-                <p>{Data.overview}</p>
+                    <p>{Data.overview}</p>
+                
             </div>
         </div>
         
