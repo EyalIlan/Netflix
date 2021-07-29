@@ -10,10 +10,10 @@ export default function secondNavbar() {
     return (
         <div id="secondaryNavbar">
            <div>
-            <button>Top Rated</button>
+            {/* <button>Top Rated</button>
             <button>popular</button>
             <button>Upcoming</button>
-            <button>Upcoming</button>
+            <button>Upcoming</button> */}
 
             </div> 
         </div>

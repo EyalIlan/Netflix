@@ -132,11 +132,23 @@
         width: 550px;
         height: 400px;
     }
+    
+}
+
+@media(min-width:2000px){
     .movie-data p{
         margin: auto;
-        font-size: 18px;
+        font-size: 40px;
         padding: 0;
         max-width: 80%;
     }
+    #VideoSize{
+        width: 1550px;
+        height: 800px;
+    }
+    .poster img{
+        height: 80vh;
+        border: solid 2px black;
+}
 
 }
