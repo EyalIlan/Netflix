@@ -1,7 +1,7 @@
 import React from 'react'
 import SearchBar from '../SearchBar/Search'
-// import {Link} from 'react-router-dom'
 import Link from '../link/Link' 
+import './Navbar.css'
 
 export default function Navbar() {
     return (
@@ -26,8 +26,10 @@ export default function Navbar() {
             <Link url = "/statistics" title ="Statistics">Statistics</Link>
             <img className="icon_size" src="/images/trend.png" alt=""/>
             </div>     */}
+            <div className="flex navbar_elements">
+                <SearchBar></SearchBar>
+            </div>
 
-            <SearchBar></SearchBar>
         </div>
     )
 }

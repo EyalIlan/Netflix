@@ -13,7 +13,8 @@ body{
   font-family: sans-serif;
   box-sizing: border-box;
   color: white;
-  background-color: #22254b;
+  background-color: black;
+  min-height: 100vh;
 }
 
 h3{
@@ -28,13 +29,7 @@ a{
 
 
 
-.navbar{
-  display: flex;
-  padding: 1rem;
-  justify-content: space-around;
-  align-items: center;
-  background-color: black
-}
+
 
 .lower-navbar{
   display: flex;
@@ -99,15 +94,6 @@ a{
 
 
 
-.navbar_elements{
-  position: relative;
-}
-
-.navbar_elements img{
-  position: absolute;
-  right: -40px;
-  bottom: 3px;
-}
 
 .Link{
   color: white;
@@ -150,10 +136,10 @@ a{
   position: relative;
   z-index: 1;
   background-color: rgb(22, 22, 22);
+  min-height:100vh;
 }
 
 .Backround-movie::after{
-  min-height:100vh;
   content: '';
   position: absolute;
   background-image: url('https://www.teahub.io/photos/full/220-2205714_get-the-latest-movies-data-src-kodi-tv.jpg');
@@ -170,14 +156,15 @@ a{
 }
 
 
-@media(max-width:600px)   {
+@media(max-width:700px)   {
   .title{
     font-size: 25px;
   }
 
   .logos img{
-    /* width: 40px; */
-    height: 50px;
+    max-width: 30px;
+    
+    /* height: 50px; */
     margin-bottom: 15px;
   }
 

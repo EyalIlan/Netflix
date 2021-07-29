@@ -17,7 +17,7 @@ function App() {
 
     <BrowserRouter>
       <div className="Backround-movie">
-        {/* <Navbar></Navbar> */}
+        <Navbar></Navbar>
         <Switch>
         <Route path ="/movie/:id" component={Movie}></Route>
         <Route path="/search/:term" component={SearchPage}></Route>

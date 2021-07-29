@@ -98,42 +98,49 @@ export default function Movie({match}) {
     console.log(displayLogos)
 
     if(showData){
-        show = (<div>
+        // show = (<div>
         
         
-        <div className="container">
-                <h1 className="title">{Data.name || Data.title}</h1>
-        <div className="movie-container">
-            <div className="poster">
-                <img src={ImgStartUrl  + Data.poster_path} alt=""/>
-            </div>
-            <div className="movie-data">
-                {url && <Youtube id="VideoSize" videoId={url.results[0]?url.results[0].key:''} opts={YoutubeObt} ></Youtube> }
-                    <p>{Data.overview}</p>
+        // <div className="container">
+        //         <h1 className="title">{Data.name || Data.title}</h1>
+        // <div className="movie-container">
+        //     <div className="poster">
+        //         <img src={ImgStartUrl  + Data.poster_path} alt=""/>
+        //     </div>
+        //     <div className="movie-data">
+        //         {url && <Youtube id="VideoSize" videoId={url.results[0]?url.results[0].key:''} opts={YoutubeObt} ></Youtube> }
+        //             <p>{Data.overview}</p>
                 
-            </div>
-        </div>
+        //     </div>
+        // </div>
         
+        // </div>
+        // <div className="lower-movie-content flex">
+        //         <h4><a href={Data.homepage}>HomePage</a></h4>
+        //             <button onClick={addStoragh} className="btn">Add to my favorites</button>
+        //         <h4>{Data.release_date===undefined?'Date Unknown':Data.release_date}</h4>
+        // </div>
+        // <div className="logos flex_around">
+        //                 {displayLogos}
+        // </div>
+        // </div>)
+        <div>
+            <h1>aaaaaaa</h1>
+            <Spinner></Spinner>
         </div>
-        <div className="lower-movie-content flex">
-                <h4><a href={Data.homepage}>HomePage</a></h4>
-                    <button onClick={addStoragh} className="btn">Add to my favorites</button>
-                <h4>{Data.release_date===undefined?'Date Unknown':Data.release_date}</h4>
-        </div>
-        <div className="logos flex_around">
-                        {displayLogos}
-        </div>
-        </div>)
     }else{
         show = ( 
-                  <Spinner></Spinner>
-                )
-    }
-
-    return (
+                  
+            <Spinner></Spinner>
+            
+            )
+        }
         
-        <div>
-            {show}
+        return (
+            
+        <div className="flex">
+            <Spinner></Spinner>
+            {/* {show} */}
         </div>
     )
 }

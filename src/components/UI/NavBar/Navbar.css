@@ -1,0 +1,43 @@
+.navbar_elements{
+    position: relative;
+  }
+  
+  .navbar_elements img{
+    position: absolute;
+    right: -40px;
+    bottom: 3px;
+  }
+
+
+.navbar{
+    display: flex;
+    padding: 1rem;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black
+}
+
+
+@media(max-width:700px){
+
+
+    .navbar_elements{
+        text-align: center;
+        display: block;
+        padding: 20px;
+      }
+      
+      .navbar_elements img{
+        position: static;
+        
+      }
+    
+    
+    .navbar{
+        display: block;
+        /* height: 30vh; */
+        padding: 1rem;
+        background-color: black
+}
+
+}
