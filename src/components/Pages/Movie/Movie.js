@@ -100,7 +100,7 @@ export default function Movie({match}) {
     console.log(displayLogos)
 
     if(showData){
-        show = (<div className="main-container Backround-movie" >
+        show = (<div>
         
         
         <div className="container">

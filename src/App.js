@@ -16,8 +16,8 @@ function App() {
   return(
 
     <BrowserRouter>
-      <Navbar></Navbar>
-      <div>
+      <div className="Backround-movie">
+        <Navbar></Navbar>
         <Route path="/" exact component={HomePage}></Route>
         <Route path ="/movie/:id" component={Movie}></Route>
         <Route path="/search/:term" component={SearchPage}></Route>
