@@ -13,7 +13,7 @@ export default function Navbar() {
             </div>
             
             <div className="flex navbar_elements">
-            <Link url = "/tv_show" title="Tv-Shows"></Link>
+            <Link url = "/tv" title="Tv-Shows"></Link>
             <img className="icon_size" src="/images/tv-show.png" alt=""/>
             </div>
 

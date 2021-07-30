@@ -1,28 +1,16 @@
 
 
-.btn{
-    background-color: var(--secondary-color);
-    color: white;
-    cursor: pointer;
-    padding: 20px;
-    margin: 15px;
-    font-size: 16px;
-  }
-  
-  .btn:hover{
-    background-color:rgb(255, 247, 247);
-    color:var(--primary-color);
-  }
 
-
+ 
+.redColor{
+  color: red;
+}
 
 .lower-movie-content{
     display: flex;
-    /* margin-top: 10px; */
     padding: 20px;
     justify-content: space-around;
     align-items: center;
-    /* transform: translateX(100px); */
   }
   
   .lower-movie-content h4,
@@ -112,15 +100,7 @@
     padding: 0;
   }
 
-  .btn{
-    background-color: var(--secondary-color);
-    color: white;
-    cursor: pointer;
-    padding: 10px;
-    margin: 0px;
-    font-size: 12px;
-  }
-
+ 
 }
 
 @media(max-width:1200px ) and (min-width:700px){
@@ -158,12 +138,5 @@
   padding: 0;
 }
 
-.btn{
-  background-color: var(--secondary-color);
-  color: white;
-  cursor: pointer;
-  padding: 40px;
-  margin: 0px;
-  font-size: 42px;
-}
+
 }  

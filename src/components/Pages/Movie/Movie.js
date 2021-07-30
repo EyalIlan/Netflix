@@ -10,52 +10,49 @@ export default function Movie({match}) {
     const [Data,SetData] = useState([])
     const [url,SetUrl] = useState('')
     const [showData,SetShowData] = useState(false)
+    const [type,SetType] = useState(new URLSearchParams(window.location.search).get('type'))
 
-    // const [logos,SetLogos] = useState([])
-
-    const parameters = new URLSearchParams(window.location.search)
+    // const parameters = new URLSearchParams(window.location.search)
     
+
+    console.log(type);
+
+    let displayLogos;
+    let show
+
+
+
     const  ImgStartUrl = 'https://image.tmdb.org/t/p/w500/'
+    
     useEffect(() =>{
         
         
-        const Request = async () =>{
-            
-            switch(parameters.get('type')){
-                case 'tvShow':
-                    GetTvShows()
-                    break;
-               case 'movie':
-                    GetMovie()
-                    break;
-                    }
-                    
-                   
-                }
-                Request()
-               
+            const Request = async () =>{
+
+                await GetMovies()
+                
+                //     switch(parameters.get('type')){
+                //       case 'tvShow':
+                //            await GetTvShows()
+                //             break;
+                //      case 'movie':
+                //            break;
+                //         }
+            }
+                 Request()
+        
+        
     },[])
     
-  
-
-    const GetTvShows = async () =>{
-        SetShowData(false)
-        let Data = await Axios.get(`https://api.themoviedb.org/3/tv/${id}?api_key=564ff4ab275baff4372adb3dc85ab368&language=en-US`) // get tv-show
-        SetData(Data.data)
-        let Url = await Axios.get(`https://api.themoviedb.org/3/tv/${id}/videos?api_key=564ff4ab275baff4372adb3dc85ab368&language=en-US`) //get video
-        SetUrl(Url.data)
-        SetShowData(true) 
-
-    }
-
     
-    const GetMovie = async () =>{
+    const GetMovies = async () =>{
         SetShowData(false)
-        let Data = await Axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=564ff4ab275baff4372adb3dc85ab368&language=en-US`) // get movie
+        let Data = await Axios.get(`https://api.themoviedb.org/3/${type}/${id}?api_key=564ff4ab275baff4372adb3dc85ab368&language=en-US`) // get movie
         SetData(Data.data)
-        let Url = await Axios.get(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=564ff4ab275baff4372adb3dc85ab368&language=en-US`) //get video
+        let Url = await Axios.get(`https://api.themoviedb.org/3/${type}/${id}/videos?api_key=564ff4ab275baff4372adb3dc85ab368&language=en-US`) //get video
         SetUrl(Url.data)
-        SetShowData(true) 
+        SetShowData(true)
+       
     }
 
 
@@ -67,17 +64,30 @@ export default function Movie({match}) {
 
 
 
-    const addStoragh = () =>{
-      let arr = JSON.parse(localStorage.getItem('Array'))
-    //   arr.push(Data)
-      let MovieInFavorite =  arr.find(p => p.id === Data.id)
-      if(MovieInFavorite === undefined){
-        arr.push(Data)
-      }else{
-        arr = arr.filter(p => p.id !== Data.id)  
-      }
-        localStorage.setItem('Array',JSON.stringify(arr))
-    }
+    const Favorite = () =>{ //Need to Refactor
+        
+
+        let arr = JSON.parse(localStorage.getItem('Array'))
+        let MovieInFavorite = arr.find(p => p.id === Data.id)
+    
+        if(MovieInFavorite === undefined ){
+            
+     
+                arr.push(Data)
+               
+            
+                arr = arr.filter(p => p.id !== Data.id)
+           
+                localStorage.setItem('Array',JSON.stringify(arr))
+        
+        } 
+    }   
+              
+            
+             
+          
+      
+    
 
     
     let YoutubeObt = {
@@ -86,24 +96,25 @@ export default function Movie({match}) {
         }
     }
 
-    let displayLogos;
-    let show
+
 
     // GET LOGOS
     if(Data.production_companies){
         displayLogos =  Data.production_companies.map(p =>{
-
-
              return p.logo_path?<img src={ImgStartUrl + p.logo_path } alt=""/>: <h2>LOGO</h2>
          })
     }else{
         displayLogos = "" 
     }
     
+    let showFavorite
+    
+//    showFavorite = favorite ? <i class="fas fa-heart fa-5x redColor" onClick={Favorite}></i> : <i class="fas fa-heart fa-5x" onClick={Favorite}></i>
+  
+
 
     if(showData){
         show = (<div>
-        
         
         <div className="container">
                 <h1 className="title">{Data.name || Data.title}</h1>
@@ -121,8 +132,7 @@ export default function Movie({match}) {
         </div>
         <div className="lower-movie-content flex">
                 <h4><a href={Data.homepage}>HomePage</a></h4>
-                    <i class="fas fa-heart" style={{color:'red'}}></i>
-                    <button onClick={addStoragh} className="btn">Add to my favorites</button>
+                    {/* {showFavorite} */}
                 <h4>{Data.release_date===undefined?'Date Unknown':Data.release_date}</h4>
         </div>
         <div className="logos flex_around">
