@@ -28,16 +28,7 @@ export default function Movie({match}) {
         
         
             const Request = async () =>{
-
                 await GetMovies()
-                
-                //     switch(parameters.get('type')){
-                //       case 'tvShow':
-                //            await GetTvShows()
-                //             break;
-                //      case 'movie':
-                //            break;
-                //         }
             }
                  Request()
         
@@ -71,16 +62,13 @@ export default function Movie({match}) {
         let MovieInFavorite = arr.find(p => p.id === Data.id)
     
         if(MovieInFavorite === undefined ){
-            
-     
-                arr.push(Data)
-               
-            
-                arr = arr.filter(p => p.id !== Data.id)
-           
-                localStorage.setItem('Array',JSON.stringify(arr))
-        
-        } 
+                arr.push(Data)            
+        }
+        else{
+            arr = arr.filter(p => p.id !== Data.id)
+        }
+
+            localStorage.setItem('Array',JSON.stringify(arr))
     }   
               
             

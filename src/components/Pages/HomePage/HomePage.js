@@ -49,20 +49,11 @@ export default function HomePage({url,t,type,favorites,showFavorite}) {
         }
 
         
-       
 
-        let DisplayContent;
-        if(type === "tv_show"){
-          DisplayContent = movies.map((p,index) =>{
-            return <NavLink  activeClassName="acitve" to={`/movie/${p.id}?type=tv`}><Card key={index} title={p.name} rating={p.vote_average} imageUrl={p.poster_path} ></Card></NavLink>
-           })
-        }
-        
-        if(type === "movie"){
-          DisplayContent =  movies.map((p,index) =>{
-            return <NavLink  activeClassName="acitve" to={`/movie/${p.id}?type=movie`}><Card key={index} title={p.title} rating={p.vote_average} imageUrl={p.poster_path} ></Card></NavLink>
+        let  DisplayContent =  movies.map((p,index) =>{
+            return <NavLink  activeClassName="acitve" to={`/movie/${p.id}?type=${type}`}><Card key={index} title={p.title || p.name} rating={p.vote_average} imageUrl={p.poster_path} ></Card></NavLink>
           })
-        }  
+    
 
 
         return (

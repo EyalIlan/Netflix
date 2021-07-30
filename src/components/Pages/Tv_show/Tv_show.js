@@ -10,7 +10,7 @@ export default function Tv_show() {
     
     return (
         <div>
-            <HomePage url ={url} type="tv_show"></HomePage>
+            <HomePage url ={url} type="tv"></HomePage>
         </div>
     )
 }
