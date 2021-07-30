@@ -69,8 +69,14 @@ export default function Movie({match}) {
 
     const addStoragh = () =>{
       let arr = JSON.parse(localStorage.getItem('Array'))
-      arr.push(Data)
-      localStorage.setItem('Array',JSON.stringify(arr))
+    //   arr.push(Data)
+      let MovieInFavorite =  arr.find(p => p.id === Data.id)
+      if(MovieInFavorite === undefined){
+        arr.push(Data)
+      }else{
+        arr = arr.filter(p => p.id !== Data.id)  
+      }
+        localStorage.setItem('Array',JSON.stringify(arr))
     }
 
     
@@ -87,7 +93,6 @@ export default function Movie({match}) {
     if(Data.production_companies){
         displayLogos =  Data.production_companies.map(p =>{
 
-            console.log(p.logo_path);
 
              return p.logo_path?<img src={ImgStartUrl + p.logo_path } alt=""/>: <h2>LOGO</h2>
          })
@@ -95,7 +100,6 @@ export default function Movie({match}) {
         displayLogos = "" 
     }
     
-    console.log(displayLogos)
 
     if(showData){
         show = (<div>
@@ -117,6 +121,7 @@ export default function Movie({match}) {
         </div>
         <div className="lower-movie-content flex">
                 <h4><a href={Data.homepage}>HomePage</a></h4>
+                    <i class="fas fa-heart" style={{color:'red'}}></i>
                     <button onClick={addStoragh} className="btn">Add to my favorites</button>
                 <h4>{Data.release_date===undefined?'Date Unknown':Data.release_date}</h4>
         </div>
