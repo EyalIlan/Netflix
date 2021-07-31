@@ -57,8 +57,7 @@ export default function HomePage({url,t,type,favorites,showFavorite}) {
 
 
         return (
-          <div>
-              
+            <div>  
             <SecondaryNavbar></SecondaryNavbar>
             <div id="top"></div>
 
